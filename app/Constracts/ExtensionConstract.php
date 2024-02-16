@@ -2,16 +2,20 @@
 
 namespace App\Constracts;
 
+use App\Core\Application;
 use DI\Container;
-use Slim\App;
 
 interface ExtensionConstract
 {
+    public function setExtensionName($name);
+
+    public function getExtensionName();
+
     public function isBuiltIn(): bool;
 
     public function setExtensionDir($extensionDir);
 
-    public function setApp(App &$app);
+    public function setApp(Application &$app);
 
     public function setContainer(Container &$container);
 
@@ -20,6 +24,8 @@ interface ExtensionConstract
     public function bootstrap();
 
     public function setup();
+
+    public function getResponeCallback(): ?callable;
 
     public function registerRoutes();
 

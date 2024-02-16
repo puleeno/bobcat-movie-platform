@@ -4,10 +4,13 @@ namespace App\Core;
 
 use App\Constracts\ExtensionConstract;
 use DI\Container;
+use ReflectionClass;
 use Slim\App;
 
 abstract class Extension implements ExtensionConstract
 {
+    protected $name;
+
     protected $isBuiltIn = false;
 
     /**
@@ -20,7 +23,7 @@ abstract class Extension implements ExtensionConstract
     /**
      * Slim app
      *
-     * @var \Slim\App
+     * @var \App\Core\Application
      */
     protected $app;
 
@@ -31,12 +34,24 @@ abstract class Extension implements ExtensionConstract
 
     protected $extensionDir;
 
+    protected $deps = [];
+
+    public function setExtensionName($name)
+    {
+        $this->name = trim($name);
+    }
+
+    public function getExtensionName()
+    {
+        return $this->name;
+    }
+
     public function isBuiltIn(): bool
     {
         return boolval($this->isBuiltIn);
     }
 
-    public function setApp(App &$app)
+    public function setApp(Application &$app)
     {
         $this->app = $app;
     }
@@ -49,6 +64,11 @@ abstract class Extension implements ExtensionConstract
     public function setExtensionDir($extensionDir)
     {
         $this->extensionDir = $extensionDir;
+    }
+
+    public function addDependencyExtension($extensionName, $version = "*")
+    {
+        $this->deps[$extensionName] = $version;
     }
 
     public function getExtensionDir()
@@ -93,5 +113,10 @@ abstract class Extension implements ExtensionConstract
     public function run()
     {
         //
+    }
+
+    public function getResponeCallback(): ?callable
+    {
+        return null;
     }
 }

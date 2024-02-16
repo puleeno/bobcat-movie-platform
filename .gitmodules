@@ -1,9 +1,18 @@
 [submodule "extensions/react"]
 	path = extensions/react
-	url = https://github.com/puleeno-cms/react-extension.git
+	url = https://github.com/jackal-cms/react-extension.git
 [submodule "extensions/layout"]
 	path = extensions/layout
-	url = https://github.com/puleeno-cms/layout-extension.git
+	url = https://github.com/jackal-cms/layout-extension.git
 [submodule "extensions/dashboard"]
 	path = extensions/dashboard
-	url = https://github.com/puleeno-cms/dashboard-extension.git
+	url = https://github.com/jackal-cms/dashboard-extension.git
+[submodule "extensions/text-editor"]
+	path = extensions/text-editor
+	url = https://github.com/jackal-cms/text-editor-extension.git
+[submodule "extensions/file-manager"]
+	path = extensions/file-manager
+	url = https://github.com/jackal-cms/file-manager-extension.git
+[submodule "extensions/seo"]
+	path = extensions/seo
+	url = https://github.com/jackal-cms/seo-extension.git

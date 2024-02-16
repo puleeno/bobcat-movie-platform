@@ -1,0 +1,20 @@
+{
+    "name": "jackal-cms/common",
+    "description": "The common extension for Jackal CMS",
+    "autoload": {
+        "psr-4": {
+            "Jackal\\Extension\\Common\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jackal",
+            "email": "puleeno@gmail.com"
+        }
+    ],
+    "require": {},
+    "config": {
+        "vendor-dir": "libs"
+    },
+    "extension-class": "\\Jackal\\Extension\\Common\\CommonExtension"
+}
