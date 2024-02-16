@@ -1,0 +1,22 @@
+{
+    "name": "puleeno/botcat-core",
+    "description": "The bobcat movie platform core",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "autoload": {
+        "psr-4": {
+            "Bobcat\\Core\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Puleeno Nguyen",
+            "email": "puleeno@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "config": {
+        "vendor-dir": "libs"
+    }
+}
